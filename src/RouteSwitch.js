@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 const RouteSwitch = () => {
   return (
     <BrowserRouter>
-      <div  className="container">
+      <header  className="container">
       <nav>
         <ul>
           <li>
@@ -33,7 +33,7 @@ const RouteSwitch = () => {
 
       </Routes>
       <Footer />
-      </div>
+      </header>
     </BrowserRouter>
   );
 };

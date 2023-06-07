@@ -23,8 +23,7 @@ function Vans() {
           <br />
           Your van is ready.
         </p>
-
-        <button className="vans-button">Explore our vans</button>
+        
       </div>
     </div>
   );

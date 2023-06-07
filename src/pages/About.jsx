@@ -1,4 +1,6 @@
 import "../styles/About.css";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function About() {
   return (
@@ -27,7 +29,7 @@ function About() {
           Your van is ready.
         </p>
 
-        <button className="about-button">Explore our vans</button>
+        <Link className="about-button" to={"/vans"}>Explore our vans</Link>
       </div>
     </div>
   );
