@@ -1,8 +1,104 @@
 :root {
-	--main-background: rgb(254,244,234);
-	--main-button-background: rgb(237,120,48);
-	--div-background: rgb(217,167,111);
-	--footer-background: rgb(28,27,29);
-	--main-border-radius: 5px;
+  --main-background: rgb(245, 229, 220);
+  --main-light-background: rgb(245, 245, 245);
+
+  --main-button-background: rgb(237, 120, 48);
+  --div-background: rgb(217, 167, 111);
+  --footer-background: rgb(28, 27, 29);
+  --main-border-radius: 15px;
+  --main-margin-left: 25px;
 }
 
+nav li {
+  list-style: none;
+  color: black;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.link-vanlife {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.link-about {
+  font-size: large;
+  font-weight: 400;
+}
+.link-vans {
+  font-size: large;
+  font-weight: 400;
+}
+
+.App {
+  text-align: center;
+  width: 700px;
+  height: 500px;
+  /* border: solid firebrick 1px; */
+  background-image: url(./images/mountain_dark.png);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.home-h1 {
+  text-align: left;
+  padding-left: 25px;
+  padding-top: 35px;
+  color: white;
+  text-shadow: grey 1px 1px 1px;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-left: var(--main-margin-left);
+}
+.App p {
+  text-align: left;
+  padding-left: 25px;
+  color: white;
+  text-shadow: grey 1px 1px 1px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-left: var(--main-margin-left);
+}
+
+html {
+  padding-top: 45px;
+  display: flex;
+  background-color: var(--main-background);
+  justify-content: center;
+  margin: auto;
+}
+.home-button {
+  background-color: var(--main-button-background);
+  width: 87%;
+  border: none;
+  height: 55px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  border-radius: 8px;
+  margin-left: var(--main-margin-left);
+  margin-right: var(--main-margin-left);
+}
+
+.container {
+  padding-top: 15px;
+  border: var(--main-light-background) 9px solid;
+  border-radius: var(--main-border-radius);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding-right: 15px;
+}
