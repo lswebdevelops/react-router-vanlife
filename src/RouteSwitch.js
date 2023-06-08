@@ -1,10 +1,10 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+ 
 import App from "./App";
 import './App.css'
 import About from "./pages/About";
 import Vans from "./pages/Vans";
 import Footer from "./components/Footer";
+import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 
 const RouteSwitch = () => {
   return (
@@ -23,14 +23,13 @@ const RouteSwitch = () => {
           <li>
             <Link className="link-vans" to={"/vans"}>Vans</Link>
           </li>
-         </div>
+         </div>  
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
         <Route path="/vans" element={<Vans />} />
-
       </Routes>
       <Footer />
       </header>
