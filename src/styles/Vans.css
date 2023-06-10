@@ -7,64 +7,47 @@
   --main-border-radius: 15px;
   --main-margin-left: 25px;
 }
-.vans-h1 {
+.vans-h3 {
   text-align: left;
   color: black;
-  text-shadow: grey 1px 1px 1px;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-left: var(--main-margin-left);
-}
-.vans-paragrath {
-  text-align: left;
-  color: black;
-  font-size: 1.2rem;
+  /* text-shadow: grey 1px 1px 1px; */
+  font-size: 1.1rem;
   font-weight: 400;
   margin-left: var(--main-margin-left);
 }
 
+.vans-paragrath {
+  text-align: left;
+  color: black;
+  font-size: 1.0rem;
+  font-weight: 400;
+  margin-left: var(--main-margin-left);
+} 
+
 .Vans {
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   width: 500px;
+  justify-content: center;
+  
+  gap: 25px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-.vans-image {
-  width: 100%;
-  height: 270px;
-  overflow: hidden;
+.vans-image{
+  width: 220px;
 }
 .vans-image img {
-  object-fit: none;
-  object-position: top;
-  width: 100%;
+  width:200px;
   height: auto;
+  border-radius: 5px;
+  ;
+}
+.van-details{
+  display: flex;
+  align-items: center;
+  ;
 }
 
-.vans-div {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  left: 5%;
-  margin-bottom: 35px;
-  background-color: var(--div-background);
-  width: 85%;
-  text-align: left;
-  padding-left: 25px;
-  border-radius: 5px;
-}
-.vans-para {
-  font-size: 1.5rem;
-  text-align: left;
-  font-weight: 600;
-}
-.vans-button {
-  color: white;
-  background-color: black;
-  width: 250px;
-  height: 50px;
-  font-size: large;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 45px;
-}

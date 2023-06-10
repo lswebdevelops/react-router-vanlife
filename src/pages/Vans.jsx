@@ -1,33 +1,37 @@
 import "../styles/Vans.css";
+import React, { useState, useEffect } from "react";
+import "../server";
 
 function Vans() {
+  const [vans, setVans] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/vans")
+      .then((res) => res.json())
+      .then((data) => setVans(data.vans));
+  }, []);
+
+  const vanElements = vans.map((van) => (
+    <div key={van.id} className="vans-image">
+      <img 
+        src={van.imageUrl}
+        alt="van" />
+      <div className="van-details">
+        <h3 className="vans-h3">{van.name}</h3>
+        <p className="vans-paragrath">
+          ${van.price}
+          <span>/day</span>
+        </p>
+      </div>
+    </div>
+  ));
+
   return (
     <div className="Vans">
-      <div className="vans-image">
-        <img src={require("../images/van_trip.png")} alt="woman on a van" />
-      </div>
-      <h1 className="vans-h1">
-      Why settle for a cramped sedan when you can enjoy the comfort of a spacious van? 
-      </h1>
-      <p className="vans-paragrath">
-      Our goal is to enhance your road trip experience by providing the ideal travel van rental. Each van is meticulously inspected prior to every trip to guarantee smooth sailing throughout your travel plans.
-        <br />
-        (Note: Additional charges apply for hitch installations) 😉
-      </p>
-      <p className="vans-paragrath">
-      Our team consists of passionate vanlife enthusiasts who have personally experienced the wonders of exploring the world on four wheels.
-      </p>
-      <div className="vans-div">
-        <p className="vans-para">
-          Your destination is waiting.
-          <br />
-          Your van is ready.
-        </p>
-        
-      </div>
+      <h1>Explore our van options</h1>
+      {vanElements}
     </div>
   );
 }
 
 export default Vans;
-
