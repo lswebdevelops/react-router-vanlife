@@ -19,10 +19,10 @@
 .vans-paragrath {
   text-align: left;
   color: black;
-  font-size: 1.0rem;
+  font-size: 1rem;
   font-weight: 400;
   margin-left: var(--main-margin-left);
-} 
+}
 
 .Vans {
   text-align: center;
@@ -31,23 +31,58 @@
   flex-direction: row;
   width: 500px;
   justify-content: center;
-  
+
   gap: 25px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-.vans-image{
+.vans-image {
+  display: flex;
+  flex-direction: column;
+ 
   width: 220px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 .vans-image img {
-  width:200px;
+  width: 200px;
   height: auto;
   border-radius: 5px;
-  ;
 }
-.van-details{
+.van-details {
   display: flex;
   align-items: center;
-  ;
+  height: 75px;
 }
 
+.div-type {
+  display: flex;
+  width: 150px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  margin: auto;
+
+}
+/* type: simple */
+.green {
+  background-color: green;
+  color: white;
+}
+/* type: rugged */
+
+.orange {
+  background-color: rgb(222, 107, 75);
+  color: white;
+}
+/* type: luxury */
+
+.gray {
+  background-color: gray;
+  color: white;
+}

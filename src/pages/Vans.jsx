@@ -13,15 +13,24 @@ function Vans() {
 
   const vanElements = vans.map((van) => (
     <div key={van.id} className="vans-image">
-      <img 
-        src={van.imageUrl}
-        alt="van" />
+      <img src={van.imageUrl} alt="van" />
       <div className="van-details">
         <h3 className="vans-h3">{van.name}</h3>
         <p className="vans-paragrath">
           ${van.price}
           <span>/day</span>
         </p>
+      </div>
+      <div
+        className={`div-type ${
+          van.type === "simple"
+            ? "green"
+            : van.type === "rugged"
+            ? "orange"
+            : "gray"
+        }`}
+      >
+        {van.type}
       </div>
     </div>
   ));
