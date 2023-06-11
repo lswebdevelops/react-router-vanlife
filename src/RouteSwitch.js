@@ -14,7 +14,8 @@ const RouteSwitch = () => {
 
   return (
     <BrowserRouter>
-      <header className="container">
+     <div className="container">
+     <header >
         <nav>
           <ul>
             <li>
@@ -37,12 +38,14 @@ const RouteSwitch = () => {
             </div>
           </ul>
         </nav>
+        </header>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
         </Routes>
-      </header>
+     
+     </div>
         <Footer />
     </BrowserRouter>
   );

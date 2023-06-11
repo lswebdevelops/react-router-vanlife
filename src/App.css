@@ -62,7 +62,7 @@ nav a {
 }
 
 html {
-  padding-top: 45px;
+  padding: 45px 45px;
   display: flex;
   background-color: var(--main-background);
   justify-content: center;
@@ -83,6 +83,7 @@ html {
 
 .container {
   padding-top: 15px;
+  padding-bottom: 55px;
   border: var(--main-light-background) 9px solid;
   border-radius: var(--main-border-radius);
 }
