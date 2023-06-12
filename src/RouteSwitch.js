@@ -10,8 +10,6 @@ import VanDetail from "./pages/VanDetail";
 const RouteSwitch = () => {
   
 
-
-
   return (
     <BrowserRouter>
      <div className="container">

@@ -41,6 +41,7 @@ nav a {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
 .home-h1 {
   text-align: left;
   padding-left: 25px;
@@ -68,17 +69,18 @@ html {
   justify-content: center;
   margin: auto;
 }
-.home-button {
-  background-color: var(--main-button-background);
-  width: 87%;
-  border: none;
-  height: 55px;
+.home-button{
+  background-color: var(--main-button-background); 
+  border: none; 
   font-size: 1.2rem;
   font-weight: 500;
   color: white;
   border-radius: 8px;
   margin-left: var(--main-margin-left);
   margin-right: var(--main-margin-left);
+  text-decoration: none;
+  height: 35px;
+  width: 340px;
 }
 
 .container {
