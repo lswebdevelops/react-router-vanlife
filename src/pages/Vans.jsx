@@ -1,6 +1,7 @@
 import "../styles/Vans.css";
 import React, { useState, useEffect } from "react";
 import "../server";
+import { Link } from "react-router-dom";
 
 function Vans() {
   const [vans, setVans] = useState([]);
@@ -11,8 +12,9 @@ function Vans() {
       .then((data) => setVans(data.vans));
   }, []);
 
+  
   const vanElements = vans.map((van) => (
-    <div key={van.id} className="vans-image">
+    <Link to={`/vans/${van.id}`} key={van.id} className="vans-image">
       <img src={van.imageUrl} alt="van" />
       <div className="van-details">
         <h3 className="vans-h3">{van.name}</h3>
@@ -32,7 +34,7 @@ function Vans() {
       >
         {van.type}
       </div>
-    </div>
+    </Link>
   ));
 
   return (

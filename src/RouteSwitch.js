@@ -4,7 +4,7 @@ import About from "./pages/About";
 import Vans from "./pages/Vans";
 import Footer from "./components/Footer";
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
-
+import VanDetail from "./pages/VanDetail";
 
 
 const RouteSwitch = () => {
@@ -43,6 +43,9 @@ const RouteSwitch = () => {
           <Route path="/" element={<App />} />
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
+          {/* adding nested routes> params */}
+          <Route path="/vans/:id" element={<VanDetail />} />
+
         </Routes>
      
      </div>

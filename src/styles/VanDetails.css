@@ -7,56 +7,47 @@
   --main-border-radius: 15px;
   --main-margin-left: 25px;
 }
-.vans-h3 {
-  text-align: left;
-  color: black;
-  /* text-shadow: grey 1px 1px 1px; */
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-left: var(--main-margin-left);
-}
 
-.vans-paragrath {
-  text-align: left;
-  color: black;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-left: var(--main-margin-left);
-}
 
-.Vans {
-  text-align: center;
+.vansDetails-image {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 500px;
   justify-content: center;
-
-  gap: 25px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-.vans-image {
-  display: flex;
+  align-items: center;
   flex-direction: column;
-  text-decoration: none;
-  width: 220px;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
+  text-align: left;
+  width: 450px;
 }
-.vans-image img {
-  width: 200px;
-  height: auto;
-  border-radius: 5px;
-}
-.van-details {
-  display: flex;
-  align-items: center;
-  height: 75px;
+.vanDetails-details {
+    padding-left: 25px;
+    padding-bottom: 30px;
 }
 
-.div-type {
+.vansDetails-image img {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.back-button {
+  display: flex;
+  color: white;
+  background-color: black;
+  width: 250px;
+  height: 50px;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 45px;
+  text-decoration: none;
+  margin-left: 22px;
+}
+
+
+
+.div-typeDetails {
+  margin-top: 18px;
   display: flex;
   width: 150px;
   height: 40px;
@@ -66,23 +57,22 @@
   font-weight: 600;
   border-radius: 5px;
   border: none;
-  margin: auto;
 
 }
 /* type: simple */
-.green {
+.greenDetails {
   background-color: green;
   color: white;
 }
 /* type: rugged */
 
-.orange {
+.orangeDetails {
   background-color: rgb(222, 107, 75);
   color: white;
 }
 /* type: luxury */
 
-.gray {
+.grayDetails {
   background-color: gray;
   color: white;
 }
