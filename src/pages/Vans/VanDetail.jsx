@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import '../styles/VanDetails.css';
+import '../../styles/VanDetails.css';
 import { Link } from "react-router-dom";
 
 function VanDetail() {

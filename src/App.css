@@ -34,8 +34,8 @@ nav a {
 
 .App {
   text-align: center;
-  width: 700px;
-  height: 500px;
+ 
+  height: 700px;
   /* border: solid firebrick 1px; */
   background-image: url(./images/mountain_dark.png);
   border-bottom-left-radius: 8px;
@@ -84,8 +84,10 @@ html {
 }
 
 .container {
+  width: 500px;  
+  height: auto;
   padding-top: 15px;
-  padding-bottom: 55px;
+  padding-bottom: 0px;
   border: var(--main-light-background) 9px solid;
   border-radius: var(--main-border-radius);
 }
@@ -108,7 +110,11 @@ nav ul div {
 
 .link-about,
 .link-vans,
-.link-vanlife {
+.link-vanlife, 
+.link-host {
   text-decoration: none;
 }
 
+.not-found{
+  padding: 15px;
+}
