@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function App() {
+function Home() {
   return (
     <div className="App">
       <h1 className="home-h1">
@@ -17,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

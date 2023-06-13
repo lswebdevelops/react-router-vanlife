@@ -9,7 +9,7 @@
   --main-margin-left: 25px;
 }
 
-nav li {
+nav li, ul li {
   list-style: none;
   color: black;
 }
@@ -17,6 +17,7 @@ nav li {
 nav a {
   
   color: black;
+  
 }
 
 .link-vanlife {
@@ -111,10 +112,27 @@ nav ul div {
 .link-about,
 .link-vans,
 .link-vanlife, 
-.link-host {
+.link-host,
+.link-income,
+.link-reviews {
   text-decoration: none;
+ 
 }
+.link-dashboard{
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
 
+  ;
+}
 .not-found{
   padding: 15px;
+}
+
+.dashboard-list{
+  display: flex;
+  align-items: center;
+  justify-content: left;  
+  gap: 23px;
+
 }
