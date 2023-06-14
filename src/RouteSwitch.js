@@ -2,7 +2,7 @@ import Home from "./App";
 import "./App.css";
 import About from "./pages/About";
 import Vans from "./pages/Vans/Vans";
-import Footer from "./components/Footer";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VanDetail from "./pages/Vans/VanDetail";
 import Layout from "./components/Layout";
@@ -21,21 +21,20 @@ const RouteSwitch = () => {
             <Route path="*" element={<NotFound />} />
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
+            
+            <Route path="vans" element={<Vans />} />
+            <Route path="vans/:id" element={<VanDetail />} />
 
-            <Route path="vans">
-            <Route index element={<Vans />} />
-            <Route path=":id" element={<VanDetail />} />
-            </Route>
-
-            <Route path="host" element={<HostLayout />}>
+            <Route path="host"  element={<HostLayout />}>
               <Route index element={<Dashboard />} />
               <Route path="income" element={<Income />} />
               <Route path="reviews" element={<Reviews />} />
             </Route>
-          </Route>
+          </Route>         
         </Routes>
+      
       </div>
-      <Footer />
+      
     </BrowserRouter>
   );
 };
