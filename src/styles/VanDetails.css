@@ -29,8 +29,8 @@
 
 .back-button {
   display: flex;
-  color: white;
-  background-color: black;
+  color: #161616;
+  background-color: none;
   width: 250px;
   height: 50px;
   font-size: 1.5rem;

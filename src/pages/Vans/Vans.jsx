@@ -13,7 +13,9 @@ function Vans() {
   }, []);
 
   
-  const vanElements = vans.map((van) => (
+  const vanElements = vans
+  .slice(0, 3) // Take only the first three vans
+  .map((van) => (
     <Link to={`/vans/${van.id}`} key={van.id} className="vans-image">
       <img src={van.imageUrl} alt="van" />
       <div className="van-details">

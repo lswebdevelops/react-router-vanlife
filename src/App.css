@@ -87,8 +87,7 @@ html {
 .container {
   width: 500px;  
   height: auto;
-  padding-top: 15px;
-  padding-bottom: 0px;
+  padding: 15px 0px 15px 15px;
   border: var(--main-light-background) 9px solid;
   border-radius: var(--main-border-radius);
 }
@@ -104,14 +103,17 @@ nav div {
 }
 
 .link-income,
-.link-reviews {
+.link-reviews,
+.link-vanshost {
   text-decoration: none;
+  color: #161616;
  
 }
 .link-dashboard{
   font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;
+  color: #161616;
 
   ;
 }

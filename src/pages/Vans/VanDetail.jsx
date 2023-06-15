@@ -1,22 +1,25 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import '../../styles/VanDetails.css';
+import "../../styles/VanDetails.css";
 import { Link } from "react-router-dom";
+import { BsArrowLeft } from "react-icons/bs";
 
 function VanDetail() {
   const params = useParams();
-  const [ van, setVan ] = React.useState(null);
+  const [van, setVan] = React.useState(null);
 
   React.useEffect(() => {
     fetch(`/api/vans/${params.id}`)
-    .then(res => res.json())
-    .then(data => setVan(data.vans))
+      .then((res) => res.json())
+      .then((data) => setVan(data.vans));
+  }, [params.id]);
 
-  }, [params.id]) 
-
-  return(
+  return (
     <div className="VanDetails">
       <Link className="back-button" to={"/vans"}>
+        {/*  adding a space between the arrow and the strings: */}
+        <BsArrowLeft />
+        <span>&nbsp;</span>
         Back to all vans
       </Link>
 
@@ -35,13 +38,16 @@ function VanDetail() {
             {van.type}
           </div>
           <h3 className="vansDetails-h3">{van.name}</h3>
-          <p className="van-price"><span>${van.price}</span>/day</p>
+          <p className="van-price">
+            <span>${van.price}</span>/day
+          </p>
           <p className="vansDetails-paragrath">{van.description}</p>
           <button className="link-button">Rent this van</button>
         </div>
-      ): <h2>Loading...</h2>}
+      ) : (
+        <h2>Loading...</h2>
+      )}
     </div>
-  )
-
+  );
 }
 export default VanDetail;
