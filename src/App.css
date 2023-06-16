@@ -9,13 +9,9 @@
   --main-margin-left: 25px;
 }
 
-
 nav a {
-  
   color: black;
   text-decoration: none;
-  ;
-  
 }
 
 .link-vanlife {
@@ -33,7 +29,7 @@ nav a {
 
 .App {
   text-align: center;
- 
+
   height: 700px;
   /* border: solid firebrick 1px; */
   background-image: url(./images/mountain_dark.png);
@@ -70,9 +66,9 @@ html {
   justify-content: center;
   margin: auto;
 }
-.home-button{
-  background-color: var(--main-button-background); 
-  border: none; 
+.home-button {
+  background-color: var(--main-button-background);
+  border: none;
   font-size: 1.2rem;
   font-weight: 500;
   color: white;
@@ -85,18 +81,17 @@ html {
 }
 
 .container {
-  width: 500px;  
+  width: 500px;
   height: auto;
   padding: 15px 0px 15px 15px;
   border: var(--main-light-background) 9px solid;
   border-radius: var(--main-border-radius);
 }
 
-
 nav div {
   display: flex;
   flex-direction: row;
-  justify-content: right;  
+  justify-content: right;
   align-items: center;
   gap: 14px;
   padding-right: 15px;
@@ -107,26 +102,23 @@ nav div {
 .link-vanshost {
   text-decoration: none;
   color: #161616;
- 
 }
-.link-dashboard{
+.link-dashboard {
   font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;
   color: #161616;
-
-  ;
 }
-.not-found{
+.not-found {
   padding: 15px;
 }
 
-.dashboard-list, .van-host-list {
+.dashboard-list,
+.van-host-list {
   display: flex;
   align-items: center;
-  justify-content: left;  
+  justify-content: left;
   gap: 23px;
-
 }
 
 .link-active {
@@ -135,3 +127,25 @@ nav div {
   color: #161616;
 }
 
+.para-host-van-details {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.para-host-van-details span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.para-host-van-image {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+    width: 90%;
+    padding: 15px;
+}
+
+.para-host-van-image img{
+  margin-left: -20px;
+ width: 100px;
+ 
+ border-radius: var(--main-border-radius);
+}

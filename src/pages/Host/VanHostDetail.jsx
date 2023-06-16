@@ -57,7 +57,7 @@ const VanHostDetail = () => {
         <h2>Loading...</h2>
       )}
       <nav className="host-van-detail-nav">
-        <>
+        
           <div className="van-host-list">
             <NavLink
               to={"."}
@@ -82,9 +82,9 @@ const VanHostDetail = () => {
               Photos
             </NavLink>
           </div>
-        </>
+       
       </nav>
-      <Outlet />
+      <Outlet context={{ van }} />
     </div>
   );
 };
