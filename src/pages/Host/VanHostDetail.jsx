@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/VanHostDetail.css";
 import { BsArrowLeft } from "react-icons/bs";
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useParams, Link, Outlet, NavLink } from "react-router-dom";
 
 const VanHostDetail = () => {
   const params = useParams();
@@ -12,13 +12,20 @@ const VanHostDetail = () => {
       .then((res) => res.json())
       .then((data) => setVan(data.vans));
   }, [params.id]);
+  const activeStyle = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "161616",
+  };
 
   return (
     <div>
-      <Link className="back-button"
-      //  making it relative to the path, not to the route:
-       to={".."}
-       relative="path">
+      <Link
+        className="back-button"
+        //  making it relative to the path, not to the route:
+        to={".."}
+        relative="path"
+      >
         {/*  adding a space between the arrow and the strings: */}
         <BsArrowLeft />
         <span>&nbsp;</span>
@@ -49,6 +56,34 @@ const VanHostDetail = () => {
       ) : (
         <h2>Loading...</h2>
       )}
+      <nav className="host-van-detail-nav">
+        <>
+          <div className="van-host-list">
+            <NavLink
+              to={"."}
+              end
+              style={({ isActive }) => (isActive ? activeStyle : null)}
+              className="link-details"
+            >
+              Details
+            </NavLink>
+            <NavLink
+              to={"pricing"}
+              style={({ isActive }) => (isActive ? activeStyle : null)}
+              className="link-pricing"
+            >
+              Pricing
+            </NavLink>
+            <NavLink
+              to={"photos"}
+              style={({ isActive }) => (isActive ? activeStyle : null)}
+              className="link-photos"
+            >
+              Photos
+            </NavLink>
+          </div>
+        </>
+      </nav>
       <Outlet />
     </div>
   );

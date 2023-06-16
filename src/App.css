@@ -121,7 +121,7 @@ nav div {
   padding: 15px;
 }
 
-.dashboard-list{
+.dashboard-list, .van-host-list {
   display: flex;
   align-items: center;
   justify-content: left;  

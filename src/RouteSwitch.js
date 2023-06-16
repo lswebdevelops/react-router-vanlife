@@ -36,6 +36,7 @@ const RouteSwitch = () => {
               <Route path="income" element={<Income />} />
               <Route path="reviews" element={<Reviews />} />
               <Route path="vans" element={<VansHost />} />
+              
               <Route path="vans/:id" element={<VanHostDetail />}>
                 
                 <Route index element={<VanHostInfo />} />
