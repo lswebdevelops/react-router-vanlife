@@ -139,13 +139,19 @@ nav div {
   display: flex;
   flex-direction: column;
   margin: auto;
-    width: 90%;
-    padding: 15px;
+  width: 94%;
+  margin-top: 10px;
+  
+  margin-left: 10px;
+  background-color: var(--main-light-background);
+  border-radius: var(--main-border-radius);
 }
 
-.para-host-van-image img{
-  margin-left: -20px;
- width: 100px;
- 
- border-radius: var(--main-border-radius);
+.para-host-van-image img {
+  width: 100px;
+  margin-left: -10px;
+  border-top-left-radius: var(--main-border-radius);
+  border-bottom-left-radius: var(--main-border-radius);
+
+
 }
