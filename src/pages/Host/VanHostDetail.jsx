@@ -19,9 +19,9 @@ const VanHostDetail = () => {
   };
 
   return (
-    <div>
+    <div className="above-all-host-container">
       <Link
-        className="back-button"
+        className="back-button" 
         //  making it relative to the path, not to the route:
         to={".."}
         relative="path"

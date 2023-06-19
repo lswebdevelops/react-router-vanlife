@@ -83,7 +83,7 @@ html {
 .container {
   width: 500px;
   height: auto;
-  padding: 15px 0px 15px 15px;
+ 
   border: var(--main-light-background) 9px solid;
   border-radius: var(--main-border-radius);
 }
@@ -154,4 +154,9 @@ nav div {
   border-bottom-left-radius: var(--main-border-radius);
 
 
+}
+
+.above-all-host-container {
+  padding-bottom: 25px;
+padding-left: 10px;
 }
