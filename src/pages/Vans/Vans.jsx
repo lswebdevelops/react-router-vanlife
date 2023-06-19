@@ -1,13 +1,13 @@
 import "../../styles/Vans.css";
 import React, { useState, useEffect } from "react";
 import "../../server";
-import { Link, useSearchParams } from "react-router-dom";
+import { NavLink, Link, useSearchParams } from "react-router-dom";
 import { type } from "@testing-library/user-event/dist/type";
 
 function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
-  console.log(typeFilter);
+  
 
   const [vans, setVans] = useState([]);
 
@@ -51,10 +51,18 @@ function Vans() {
     <div className="Vans">
       <h1>Explore our van options</h1>
       <div className="van-list-filter-buttons">
-        <Link  className="buttons-filter" to="?type=simple">Simple</Link>
-        <Link className="buttons-filter"  to="?type=rugged">Rugged</Link>
-        <Link  className="buttons-filter" to="?type=luxury">Luxury</Link>
-        <Link className="buttons-filter"  to=".">Clear</Link>
+        <NavLink 
+        className={"filter-buttons"}
+         to="?type=simple">Simple</NavLink>
+        <NavLink 
+        className={"filter-buttons"}
+          to="?type=rugged">Rugged</NavLink>
+        <NavLink 
+        className={"filter-buttons"}
+         to="?type=luxury">Luxury</NavLink>
+        <NavLink 
+        className={"filter-buttons"}
+          to=".">Clear</NavLink>
       </div>
       <div className="Vans">
       {vanElements}
