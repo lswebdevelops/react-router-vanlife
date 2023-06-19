@@ -83,7 +83,7 @@ html {
 .container {
   width: 500px;
   height: auto;
- 
+
   border: var(--main-light-background) 9px solid;
   border-radius: var(--main-border-radius);
 }
@@ -141,7 +141,7 @@ nav div {
   margin: auto;
   width: 94%;
   margin-top: 10px;
-  
+
   margin-left: 10px;
   background-color: var(--main-light-background);
   border-radius: var(--main-border-radius);
@@ -152,11 +152,30 @@ nav div {
   margin-left: -10px;
   border-top-left-radius: var(--main-border-radius);
   border-bottom-left-radius: var(--main-border-radius);
-
-
 }
 
 .above-all-host-container {
   padding-bottom: 25px;
-padding-left: 10px;
+  padding-left: 10px;
+}
+
+.van-list-filter-buttons {
+  display: flex;
+  justify-content: right;
+  gap: 17px;
+}
+
+.buttons-filter {
+  background-color: rgb(235, 239, 241);
+  color: grey;
+  border: none;
+  width: 103px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: large;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
