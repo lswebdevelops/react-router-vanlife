@@ -53,16 +53,16 @@ function Vans() {
       <div className="van-list-filter-buttons">
         <button     
         onClick={()=> {setSearchParams({type: "simple"})}}
-        className={"filter-buttons"}   to="?type=simple">Simple</button>
+        className={"filter-buttons"}   >Simple</button>
         <button    
         onClick={()=> {setSearchParams({type: "rugged"})}}
-        className={"filter-buttons"}   to="?type=rugged">Rugged</button>
+        className={"filter-buttons"}   >Rugged</button>
         <button     
         onClick={()=> {setSearchParams({type: "luxury"})}}
-        className={"filter-buttons"}   to="?type=luxury">Luxury</button>
+        className={"filter-buttons"}   >Luxury</button>
         <button    
         onClick={()=> {setSearchParams({})}}
-        className={"filter-buttons"}   to=".">Clear</button>
+        className={"filter-buttons"}  >Clear</button>
       </div>
       <div className="Vans">
       {vanElements}
