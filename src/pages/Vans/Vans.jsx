@@ -1,13 +1,11 @@
 import "../../styles/Vans.css";
 import React, { useState, useEffect } from "react";
 import "../../server";
-import { NavLink, Link, useSearchParams } from "react-router-dom";
-import { type } from "@testing-library/user-event/dist/type";
+import { Link, useSearchParams } from "react-router-dom";
 
 function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
-  
 
   const [vans, setVans] = useState([]);
 
@@ -51,22 +49,42 @@ function Vans() {
     <div className="Vans">
       <h1>Explore our van options</h1>
       <div className="van-list-filter-buttons">
-        <button     
-        onClick={()=> {setSearchParams({type: "simple"})}}
-        className={"filter-buttons"}   >Simple</button>
-        <button    
-        onClick={()=> {setSearchParams({type: "rugged"})}}
-        className={"filter-buttons"}   >Rugged</button>
-        <button     
-        onClick={()=> {setSearchParams({type: "luxury"})}}
-        className={"filter-buttons"}   >Luxury</button>
-        <button    
-        onClick={()=> {setSearchParams({})}}
-        className={"filter-buttons"}  >Clear</button>
+        <button
+          onClick={() => {
+            setSearchParams({ type: "simple" });
+          }}
+          className={typeFilter === "simple"? "green": "filter-buttons"}
+        >
+          Simple
+        </button>
+        <button
+          onClick={() => {
+            setSearchParams({ type: "rugged" });
+          }}
+          className={typeFilter === "rugged"? "orange": "filter-buttons"}
+        >
+          Rugged
+        </button>
+        <button
+          onClick={() => {
+            setSearchParams({ type: "luxury" });
+          }}
+          className={typeFilter === "luxury"? "gray": "filter-buttons"}
+        >
+          Luxury
+        </button>
+        {typeFilter ? (
+          <button
+            onClick={() => {
+              setSearchParams({});
+            }}
+            className={"filter-buttons"}
+          >
+            Clear
+          </button>
+        ) : null}
       </div>
-      <div className="Vans">
-      {vanElements}
-      </div>
+      <div className="Vans">{vanElements}</div>
     </div>
   );
 }

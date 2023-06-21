@@ -73,16 +73,47 @@
 .green {
   background-color: green;
   color: white;
+   border: none;
+  width: 103px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: large;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 /* type: rugged */
 
 .orange {
   background-color: rgb(222, 107, 75);
   color: white;
+   border: none;
+  width: 103px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: large;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 /* type: luxury */
 
 .gray {
   background-color: gray;
   color: white;
+   border: none;
+  width: 103px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: large;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
