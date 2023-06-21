@@ -1,11 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import "../../styles/VanDetails.css";
-import { Link } from "react-router-dom";
+
 import { BsArrowLeft } from "react-icons/bs";
 
 function VanDetail() {
   const params = useParams();
+  const location = useLocation();
+console.log(location);
+
   const [van, setVan] = React.useState(null);
 
   React.useEffect(() => {
@@ -14,9 +17,13 @@ function VanDetail() {
       .then((data) => setVan(data.vans));
   }, [params.id]);
 
+  const search = location.state?.search || "";
   return (
     <div className="VanDetails">
-      <Link className="back-button" to={"/vans"}>
+      <Link 
+        className="back-button" 
+        to={`..${search}`}
+        relative="path">
         {/*  adding a space between the arrow and the strings: */}
         <BsArrowLeft />
         <span>&nbsp;</span>

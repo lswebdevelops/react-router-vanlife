@@ -6,6 +6,7 @@ import { Link, useSearchParams } from "react-router-dom";
 function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
+ 
 
   const [vans, setVans] = useState([]);
 
@@ -22,7 +23,11 @@ function Vans() {
   const vanElements = displayElements
     // .slice(0, 3) // Take only the first three vans
     .map((van) => (
-      <Link to={`/vans/${van.id}`} key={van.id} className="vans-image">
+      <Link 
+        to={van.id} 
+        state={{ search: `?${searchParams.toString()}` }}
+        key={van.id} 
+        className="vans-image">
         <img src={van.imageUrl} alt="van" />
         <div className="van-details">
           <h3 className="vans-h3">{van.name}</h3>
@@ -53,7 +58,7 @@ function Vans() {
           onClick={() => {
             setSearchParams({ type: "simple" });
           }}
-          className={typeFilter === "simple"? "green": "filter-buttons"}
+          className={typeFilter === "simple" ? "green" : "filter-buttons"}
         >
           Simple
         </button>
@@ -61,7 +66,7 @@ function Vans() {
           onClick={() => {
             setSearchParams({ type: "rugged" });
           }}
-          className={typeFilter === "rugged"? "orange": "filter-buttons"}
+          className={typeFilter === "rugged" ? "orange" : "filter-buttons"}
         >
           Rugged
         </button>
@@ -69,7 +74,7 @@ function Vans() {
           onClick={() => {
             setSearchParams({ type: "luxury" });
           }}
-          className={typeFilter === "luxury"? "gray": "filter-buttons"}
+          className={typeFilter === "luxury" ? "gray" : "filter-buttons"}
         >
           Luxury
         </button>

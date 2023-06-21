@@ -14,7 +14,7 @@ const VansHost = () => {
   const vanElements = vans
     .slice(1, 4) // Take only three vans
     .map((van) => (
-      <Link to={`/host/vans/${van.id}`} key={van.id} className="vans-host-image">
+      <Link to={van.id} key={van.id} className="vans-host-image">
         <img src={van.imageUrl} alt="vans" />
 
         <div>
