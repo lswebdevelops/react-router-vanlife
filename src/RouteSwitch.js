@@ -24,7 +24,6 @@ const RouteSwitch = () => {
       <div className="container">
         <Routes>
           <Route element={<Layout />}>
-            <Route path="*" element={<NotFound />} />
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
 
@@ -36,14 +35,14 @@ const RouteSwitch = () => {
               <Route path="income" element={<Income />} />
               <Route path="reviews" element={<Reviews />} />
               <Route path="vans" element={<VansHost />} />
-              
+
               <Route path="vans/:id" element={<VanHostDetail />}>
-                
                 <Route index element={<VanHostInfo />} />
                 <Route path="photos" element={<VanHostPhotos />} />
                 <Route path="pricing" element={<VanHostPricing />} />
               </Route>
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </div>
