@@ -17,6 +17,8 @@ createServer({
 
     routes() {
         this.namespace = "api"
+        this.loading = false
+        this.timing = 500
 
         this.get("/vans", (schema, request) => {
             return schema.vans.all()
