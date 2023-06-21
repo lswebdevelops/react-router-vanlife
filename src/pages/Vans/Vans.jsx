@@ -2,19 +2,25 @@ import "../../styles/Vans.css";
 import React, { useState, useEffect } from "react";
 import "../../server";
 import { Link, useSearchParams } from "react-router-dom";
+import { getVans } from "../../api";
 
 function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const typeFilter = searchParams.get("type");
- 
-
   const [vans, setVans] = useState([]);
+  const [loading, setLoading ] = useState(false);
+
+  const typeFilter = searchParams.get("type");
 
   useEffect(() => {
-    fetch("/api/vans")
-      .then((res) => res.json())
-      .then((data) => setVans(data.vans));
+    async function loadVans() {
+      setLoading(true)
+      const data = await getVans()
+      setVans(data)
+      setLoading(false)
+    }
+    loadVans()
   }, []);
+ 
 
   const displayElements = typeFilter
     ? vans.filter((van) => van.type.toLowerCase() === typeFilter)
@@ -51,6 +57,9 @@ function Vans() {
       </Link>
     ));
 
+    if (loading) {
+      return <h1>Loading...</h1>
+    }
   return (
     <div className="Vans">
       <h1>Explore our van options</h1>

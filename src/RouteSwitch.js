@@ -13,7 +13,6 @@ import NotFound from "./components/NotFound";
 import HostLayout from "./components/HostLayout";
 import Dashboard from "./pages/Host/Dashboard";
 import VansHost from "./pages/Host/VansHost";
-
 import VanHostInfo from "./pages/Host/VanHostInfo";
 import VanHostPhotos from "./pages/Host/VanHostPhotos";
 import VanHostPricing from "./pages/Host/VanHostPricing";
