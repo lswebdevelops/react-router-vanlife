@@ -7,7 +7,7 @@ import { BsArrowLeft } from "react-icons/bs";
 function VanDetail() {
   const params = useParams();
   const location = useLocation();
-console.log(location);
+  
 
   const [van, setVan] = React.useState(null);
 
@@ -17,7 +17,9 @@ console.log(location);
       .then((data) => setVan(data.vans));
   }, [params.id]);
 
-  const search = location.state?.search || "";
+  const search = location.state?.search || ""
+  const type = location.state?.type || "all"
+
   return (
     <div className="VanDetails">
       <Link 
@@ -27,7 +29,9 @@ console.log(location);
         {/*  adding a space between the arrow and the strings: */}
         <BsArrowLeft />
         <span>&nbsp;</span>
-        Back to all vans
+
+        {/* if  */}
+        Back to {type} vans
       </Link>
 
       {van ? (

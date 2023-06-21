@@ -25,7 +25,8 @@ function Vans() {
     .map((van) => (
       <Link 
         to={van.id} 
-        state={{ search: `?${searchParams.toString()}` }}
+        state={{ search: `?${searchParams.toString()}`,
+        type: typeFilter  }}
         key={van.id} 
         className="vans-image">
         <img src={van.imageUrl} alt="van" />
