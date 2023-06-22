@@ -4,6 +4,10 @@ import "../../server";
 import { Link, useSearchParams } from "react-router-dom";
 import { getVans } from "../../api";
 
+export function loader (){
+  return "the data is here"
+}
+
 function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [vans, setVans] = useState([]);

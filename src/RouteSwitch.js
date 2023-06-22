@@ -1,7 +1,7 @@
 import Home from "./App";
 import "./App.css";
 import About from "./pages/About";
-import Vans from "./pages/Vans/Vans";
+import Vans, {loader as vansPageLoader } from "./pages/Vans/Vans";
 import VanHostDetail from "./pages/Host/VanHostDetail";
 
 import {
@@ -25,11 +25,11 @@ import VanHostPricing from "./pages/Host/VanHostPricing";
 const router = createBrowserRouter(
   createRoutesFromElements(
     
-      <Route element={<Layout />}>
+      <Route element={<Layout />} >
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
 
-      <Route path="vans" element={<Vans />} />
+      <Route path="vans" element={<Vans />} loader={vansPageLoader}/>
       <Route path="vans/:id" element={<VanDetail />} />
 
       <Route path="host" element={<HostLayout />}>
