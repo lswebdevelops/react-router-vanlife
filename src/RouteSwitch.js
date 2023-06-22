@@ -3,6 +3,7 @@ import "./App.css";
 import About from "./pages/About";
 import Vans, {loader as vansPageLoader } from "./pages/Vans/Vans";
 import VanHostDetail from "./pages/Host/VanHostDetail";
+import Error from "./components/Error";
 
 import {
   Route,
@@ -29,7 +30,11 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
 
-      <Route path="vans" element={<Vans />} loader={vansPageLoader}/>
+      <Route 
+        path="vans" 
+        element={<Vans />}
+        errorElement={<Error />} 
+        loader={vansPageLoader}/>
       <Route path="vans/:id" element={<VanDetail />} />
 
       <Route path="host" element={<HostLayout />}>

@@ -4,16 +4,17 @@ import "../../server";
 import { Link, useSearchParams, useLoaderData } from "react-router-dom";
 import { getVans } from "../../api";
 
-export function loader (){
-  return getVans()
+export function loader() {
+ 
+  return getVans();
 }
 
 function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [ error , setError ] = useState(null);
-  const vans = useLoaderData()
+  const [error, setError] = useState(null);
+  const vans = useLoaderData();
 
-  const typeFilter = searchParams.get("type"); 
+  const typeFilter = searchParams.get("type");
 
   const displayElements = typeFilter
     ? vans.filter((van) => van.type.toLowerCase() === typeFilter)
@@ -22,12 +23,12 @@ function Vans() {
   const vanElements = displayElements
     // .slice(0, 3) // Take only the first three vans
     .map((van) => (
-      <Link 
-        to={van.id} 
-        state={{ search: `?${searchParams.toString()}`,
-        type: typeFilter  }}
-        key={van.id} 
-        className="vans-image">
+      <Link
+        to={van.id}
+        state={{ search: `?${searchParams.toString()}`, type: typeFilter }}
+        key={van.id}
+        className="vans-image"
+      >
         <img src={van.imageUrl} alt="van" />
         <div className="van-details">
           <h3 className="vans-h3">{van.name}</h3>
@@ -50,10 +51,9 @@ function Vans() {
       </Link>
     ));
 
-   
-    if (error) {
-      return <h1> There was an error: {error.message}</h1>
-    }
+  if (error) {
+    return <h1> There was an error: {error.message}</h1>;
+  }
   return (
     <div className="Vans">
       <h1>Explore our van options</h1>
