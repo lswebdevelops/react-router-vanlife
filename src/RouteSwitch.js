@@ -4,7 +4,12 @@ import About from "./pages/About";
 import Vans from "./pages/Vans/Vans";
 import VanHostDetail from "./pages/Host/VanHostDetail";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 import VanDetail from "./pages/Vans/VanDetail";
 import Layout from "./components/Layout";
 import Income from "./pages/Host/Income";
@@ -17,35 +22,35 @@ import VanHostInfo from "./pages/Host/VanHostInfo";
 import VanHostPhotos from "./pages/Host/VanHostPhotos";
 import VanHostPricing from "./pages/Host/VanHostPricing";
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    
+      <Route element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+
+      <Route path="vans" element={<Vans />} />
+      <Route path="vans/:id" element={<VanDetail />} />
+
+      <Route path="host" element={<HostLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="income" element={<Income />} />
+        <Route path="reviews" element={<Reviews />} />
+        <Route path="vans" element={<VansHost />} />
+
+        <Route path="vans/:id" element={<VanHostDetail />}>
+          <Route index element={<VanHostInfo />} />
+          <Route path="photos" element={<VanHostPhotos />} />
+          <Route path="pricing" element={<VanHostPricing />} />
+        </Route>
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Route>
+
+  )
+);
+
 const RouteSwitch = () => {
-  return (
-    <BrowserRouter>
-      <div className="container">
-        <Routes>
-          <Route element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-
-            <Route path="vans" element={<Vans />} />
-            <Route path="vans/:id" element={<VanDetail />} />
-
-            <Route path="host" element={<HostLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="income" element={<Income />} />
-              <Route path="reviews" element={<Reviews />} />
-              <Route path="vans" element={<VansHost />} />
-
-              <Route path="vans/:id" element={<VanHostDetail />}>
-                <Route index element={<VanHostInfo />} />
-                <Route path="photos" element={<VanHostPhotos />} />
-                <Route path="pricing" element={<VanHostPricing />} />
-              </Route>
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 };
 export default RouteSwitch;
