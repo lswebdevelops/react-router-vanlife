@@ -5,7 +5,6 @@ import Vans, {loader as vansPageLoader } from "./pages/Vans/Vans";
 import VanHostDetail from "./pages/Host/VanHostDetail";
 import Error from "./components/Error";
 import Login from "./pages/Login";
-
 import {
   Route,
   RouterProvider,
@@ -19,7 +18,7 @@ import Reviews from "./pages/Host/Reviews";
 import NotFound from "./components/NotFound";
 import HostLayout from "./components/HostLayout";
 import Dashboard from "./pages/Host/Dashboard";
-import VansHost from "./pages/Host/VansHost";
+import VansHost, {loader as hostVansLoader} from "./pages/Host/VansHost";
 import VanHostInfo from "./pages/Host/VanHostInfo";
 import VanHostPhotos from "./pages/Host/VanHostPhotos";
 import VanHostPricing from "./pages/Host/VanHostPricing";
@@ -71,9 +70,7 @@ const router = createBrowserRouter(
         <Route 
         path="vans" 
         element={<VansHost />}
-        loader={async() => {
-          return null
-        }}
+        loader={hostVansLoader}
         />
         <Route 
         path="vans/:id" 

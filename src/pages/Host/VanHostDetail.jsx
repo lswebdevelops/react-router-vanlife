@@ -3,6 +3,9 @@ import "../../styles/VanHostDetail.css";
 import { BsArrowLeft } from "react-icons/bs";
 import { useParams, Link, Outlet, NavLink } from "react-router-dom";
 
+
+
+
 const VanHostDetail = () => {
   const params = useParams();
   const [van, setVan] = useState([]);
@@ -12,6 +15,7 @@ const VanHostDetail = () => {
       .then((res) => res.json())
       .then((data) => setVan(data.vans));
   }, [params.id]);
+
   const activeStyle = {
     fontWeight: "bold",
     textDecoration: "underline",
