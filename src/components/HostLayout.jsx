@@ -1,49 +1,47 @@
-import React from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import React from "react"
+import { NavLink, Outlet } from "react-router-dom"
 
-const HostLayout = () => {
-  const activeStyle = {
-    fontWeight: "bold",
-    textDecoration: "underline",
-    color: "161616",
-  };
-  return (
-    <>
-      <div className="dashboard-list">
-        <NavLink
-          to={"/host"}
-          end
-          style={({ isActive }) => (isActive ? activeStyle : null)}
-          className="link-dashboard"
-        >
-          Dashboard
-        </NavLink>
-        <NavLink
-          to={"/host/income"}
-          style={({ isActive }) => (isActive ? activeStyle : null)}
-          className="link-income"
-        >
-          Income
-        </NavLink>
-        <NavLink
-          to={"/host/vans"}
-          style={({ isActive }) => (isActive ? activeStyle : null)}
-          className="link-vanshost"
-        >
-          Vans
-        </NavLink>
-        <NavLink
-          to={"/host/reviews"}
-          style={({ isActive }) => (isActive ? activeStyle : null)}
-          className="link-reviews"
-        >
-          Reviews
-        </NavLink>
-      </div>
+export default function HostLayout() {
+    const activeStyles = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "#161616"
+    }
 
-      <Outlet />
-    </>
-  );
-};
+    return (
+        <>
+            <nav className="host-nav">
+                <NavLink
+                    to="."
+                    end
+                    style={({ isActive }) => isActive ? activeStyles : null}
+                >
+                    Dashboard
+                </NavLink>
 
-export default HostLayout;
+                <NavLink
+                    to="income"
+                    style={({ isActive }) => isActive ? activeStyles : null}
+                >
+                    Income
+                </NavLink>
+                
+                <NavLink
+                    to="vans"
+                    style={({ isActive }) => isActive ? activeStyles : null}
+                >
+                    Vans
+                </NavLink>
+
+                <NavLink
+                    to="reviews"
+                    style={({ isActive }) => isActive ? activeStyles : null}
+                >
+                    Reviews
+                </NavLink>
+
+            </nav>
+            <Outlet />
+        </>
+    )
+}

@@ -1,52 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { useParams, Link, useLocation, useLoaderData } from "react-router-dom";
-import "../../styles/VanDetails.css";
-import { BsArrowLeft } from "react-icons/bs";
-import { getVans } from "../../api";
+import React from "react"
+import { Link, useParams, useLocation, useLoaderData } from "react-router-dom"
+import { getVans } from "../../api"
 
 export function loader({ params }) {
-  return getVans(params.id);
+    return getVans(params.id)
 }
 
-function VanDetail() {
-  const params = useParams();
-  const location = useLocation();
-  const van = useLoaderData();
+export default function VanDetail() {
+    const location = useLocation()
+    const van = useLoaderData()
 
-  const search = location.state?.search || "";
-  const type = location.state?.type || "all";
+    const search = location.state?.search || "";
+    const type = location.state?.type || "all";
 
-  return (
-    <div className="VanDetails">
-      <Link className="back-button" to={`..${search}`} relative="path">
-        {/*  adding a space between the arrow and the strings: */}
-        <BsArrowLeft />
-        <span>&nbsp;</span>
-        {/* if  */}
-        Back to {type} vans
-      </Link>
+    return (
+        <div className="van-detail-container">
+            <Link
+                to={`..${search}`}
+                relative="path"
+                className="back-button"
+            >&larr; <span>Back to {type} vans</span></Link>
 
-      <div className="vansDetails-image">
-        <img src={van.imageUrl} alt="a van" />
-        <div
-          className={`div-typeDetails ${
-            van.type === "simple"
-              ? "greenDetails"
-              : van.type === "rugged"
-              ? "orangeDetails"
-              : "grayDetails"
-          }`}
-        >
-          {van.type}
+            <div className="van-detail">
+                <img src={van.imageUrl} />
+                <i className={`van-type ${van.type} selected`}>
+                    {van.type}
+                </i>
+                <h2>{van.name}</h2>
+                <p className="van-price"><span>${van.price}</span>/day</p>
+                <p>{van.description}</p>
+                <button className="link-button">Rent this van</button>
+            </div>
+
         </div>
-        <h3 className="vansDetails-h3">{van.name}</h3>
-        <p className="van-price">
-          <span>${van.price}</span>/day
-        </p>
-        <p className="vansDetails-paragrath">{van.description}</p>
-        <button className="link-button">Rent this van</button>
-      </div>
-    </div>
-  );
+    )
 }
-export default VanDetail;

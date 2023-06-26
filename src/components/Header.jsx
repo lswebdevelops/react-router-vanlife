@@ -1,40 +1,42 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import { HiMiniUserCircle } from "react-icons/hi2";
+import React from "react"
+import { Link, NavLink } from "react-router-dom"
 
-const Header = () => {
-  return (
-    <header>
-      <nav>
-        <Link className="link-vanlife " to={"/"}>
-          #VANLIFE
-        </Link>
-        <div>
-          <NavLink
-            className={({ isActive }) => (isActive ? "link-active" : null)}
-            to={"/host"}
-          >
-            Host
-          </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "link-active" : null)}
-            to={"/about"}
-          >
-            About
-          </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "link-active" : null)}
-            to={"/vans"}
-          > 
-            Vans
-          </NavLink>
-          <Link to="login" className="login-link">
-                    <HiMiniUserCircle />
+export default function Header() {
+    const activeStyles = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "#161616"
+    }
+    
+    return (
+        <header>
+            <Link className="site-logo" to="/">#VanLife</Link>
+            <nav>
+                <NavLink 
+                    to="host"
+                    style={({isActive}) => isActive ? activeStyles : null}
+                >
+                    Host
+                </NavLink>
+                <NavLink 
+                    to="about"
+                    style={({isActive}) => isActive ? activeStyles : null}
+                >
+                    About
+                </NavLink>
+                <NavLink 
+                    to="vans"
+                    style={({isActive}) => isActive ? activeStyles : null}
+                >
+                    Vans
+                </NavLink>
+                <Link to="login" className="login-link">
+                    <img 
+                        src={require(`../assets/images/avatar-icon.png`)}
+                        className="login-icon"
+                    />
                 </Link>
-        </div>
-      </nav>
-    </header>
-  );
-};
-
-export default Header;
+            </nav>
+        </header>
+    )
+}
