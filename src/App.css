@@ -1,7 +1,6 @@
 :root {
   --main-background: rgb(245, 229, 220);
   --main-light-background: rgb(245, 245, 245);
-
   --main-button-background: rgb(237, 120, 48);
   --div-background: rgb(217, 167, 111);
   --footer-background: rgb(28, 27, 29);
@@ -29,7 +28,6 @@ nav a {
 
 .App {
   text-align: center;
-
   height: 700px;
   /* border: solid firebrick 1px; */
   background-image: url(./images/mountain_dark.png);
@@ -59,6 +57,10 @@ nav a {
   margin-left: var(--main-margin-left);
 }
 
+body {
+  max-width: 750px;
+  min-width: 750px;
+}
 html {
   padding: 45px 45px;
   display: flex;
@@ -113,14 +115,11 @@ nav div {
   padding: 15px;
 }
 .not-found-container .not-found-button {
- 
   background-color: #161616;
   color: white;
   padding: 4px 12px 8px 12px;
-  text-decoration: none;;
+  text-decoration: none;
   border-radius: 4px;
-
-  ;
 }
 .dashboard-list,
 .van-host-list {
@@ -150,7 +149,6 @@ nav div {
   margin: auto;
   width: 94%;
   margin-top: 10px;
-
   margin-left: 10px;
   background-color: var(--main-light-background);
   border-radius: var(--main-border-radius);
@@ -174,7 +172,7 @@ nav div {
   gap: 17px;
 }
 
-.filter-buttons{
+.filter-buttons {
   background-color: rgb(235, 239, 241);
   /* color: grey; */
   border: none;
@@ -188,5 +186,3 @@ nav div {
   justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
- 

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import { HiMiniUserCircle } from "react-icons/hi2";
 
 const Header = () => {
   return (
@@ -27,6 +28,9 @@ const Header = () => {
           > 
             Vans
           </NavLink>
+          <Link to="login" className="login-link">
+                    <HiMiniUserCircle />
+                </Link>
         </div>
       </nav>
     </header>
