@@ -2,7 +2,7 @@ import Home from "./App";
 import "./App.css";
 import About from "./pages/About";
 import Vans, {loader as vansPageLoader } from "./pages/Vans/Vans";
-import VanHostDetail from "./pages/Host/VanHostDetail";
+import VanHostDetail, {loader as hostVanDetailLoader} from "./pages/Host/VanHostDetail";
 import Error from "./components/Error";
 import Login from "./pages/Login";
 import {
@@ -75,9 +75,7 @@ const router = createBrowserRouter(
         <Route 
         path="vans/:id" 
         element={<VanHostDetail />}
-        loader={async() => {
-          return null
-        }}
+        loader={hostVanDetailLoader}
         >
           <Route 
           index 

@@ -3,11 +3,11 @@ import { useOutletContext } from "react-router-dom";
 
 
 const VanHostPhotos = () => {
-    const { van } = useOutletContext();
+    const { currentVan } = useOutletContext();
 
     return (
       <section className="para-host-van-image">
-            <img src={van.imageUrl} alt="vans" />     
+            <img src={currentVan.imageUrl} alt="vans" />     
       </section>
     );
   };
