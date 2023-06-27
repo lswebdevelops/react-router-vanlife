@@ -1,6 +1,5 @@
 import React from 'react';
-import './index.css';
-
+import './index.css'
 import ReactDOM from 'react-dom/client';
 import {
   RouterProvider,
@@ -26,6 +25,7 @@ import Login from "./pages/Login"
 import Layout from "./components/Layout"
 import HostLayout from "./components/HostLayout"
 import Error from "./components/Error"
+import { requireAuth } from "./utils"
 
 import "./server"
 
@@ -49,33 +49,25 @@ const router = createBrowserRouter(createRoutesFromElements(
       loader={vanDetailLoader}
     />
     {/**
-     * Tasks: 
-     * 1. Check for user's auth status (fake it, like before)
-     * 2. If not logged in, `redirect` to "/login"
-     * 3. Profit!
+     * Challenge:
+     * Include the `await requireAuth()` everywhere it's needed!
      */}
 
     <Route path="host" element={<HostLayout />}>
       <Route
         index
         element={<Dashboard />}
-        loader={async () => {
-          return null
-        }}
+        loader={async () => await requireAuth()}
       />
       <Route
         path="income"
         element={<Income />}
-        loader={async () => {
-          return null
-        }}
+        loader={async () => await requireAuth()}
       />
       <Route
         path="reviews"
         element={<Reviews />}
-        loader={async () => {
-          return null
-        }}
+        loader={async () => await requireAuth()}
       />
       <Route
         path="vans"
@@ -90,23 +82,17 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route
           index
           element={<HostVanInfo />}
-          loader={async () => {
-            return null
-          }}
+          loader={async () => await requireAuth()}
         />
         <Route
           path="pricing"
           element={<HostVanPricing />}
-          loader={async () => {
-            return null
-          }}
+          loader={async () => await requireAuth()}
         />
         <Route
           path="photos"
           element={<HostVanPhotos />}
-          loader={async () => {
-            return null
-          }}
+          loader={async () => await requireAuth()}
         />
       </Route>
     </Route>

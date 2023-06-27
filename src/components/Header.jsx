@@ -33,6 +33,8 @@ export default function Header() {
                 <Link to="login" className="login-link">
                     <img 
                         src={require(`../assets/images/avatar-icon.png`)}
+                        alt="vans" 
+                       
                         className="login-icon"
                     />
                 </Link>
