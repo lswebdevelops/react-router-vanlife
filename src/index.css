@@ -9,11 +9,18 @@ html, body {
   font-family: "Inter", sans-serif;
 }
 
+main, header {
+  margin: auto;
+  max-width: 750px;
+
+}
 a {
   text-decoration: unset;
   color: unset;
 }
-
+img {
+  max-width: 750px;
+}
 body::-webkit-scrollbar {
 display: none;
 }
@@ -529,4 +536,8 @@ i[class*='van-type-'] {
   margin-top: 22px;
   color: white;
   font-family: "Inter", sans-serif;
+}
+
+.red {
+  color: red;
 }
