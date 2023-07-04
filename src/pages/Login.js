@@ -11,17 +11,13 @@ export function loader({ request }) {
     return new URL(request.url).searchParams.get("message")
 }
 
-/**
- * Challenge: Pull in the formData from our Form
- * For now, just log the data to the console.
- */
-
 export async function action({ request }) {
-  const formData = await request.formData();
-  const email = formData.get("email")
-  const password = formData.get("password")
-  console.log(email, password);
-   
+    const formData = await request.formData()
+    const email = formData.get("email")
+    const password = formData.get("password")
+    const data = await loginUser({ email, password })
+    console.log(data)
+
     return null
 }
 
@@ -44,13 +40,7 @@ export default function Login() {
             .finally(() => setStatus("idle"))
     }
 
-    function handleChange(e) {
-        const { name, value } = e.target
-        setLoginFormData(prev => ({
-            ...prev,
-            [name]: value
-        }))
-    }
+  
 
     return (
         <div className="login-container">
@@ -60,18 +50,16 @@ export default function Login() {
 
             <Form method="post" className="login-form">
                 <input
-                    name="email"
-                    onChange={handleChange}
+                    name="email"                   
                     type="email"
                     placeholder="Email address"
-                    value={loginFormData.email}
+                  
                 />
                 <input
-                    name="password"
-                    onChange={handleChange}
+                    name="password"                    
                     type="password"
                     placeholder="Password"
-                    value={loginFormData.password}
+                    
                 />
                 <button
                     disabled={status === "submitting"}
